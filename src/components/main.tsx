@@ -1,16 +1,23 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
 
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import CitaResult from './citaResult'
 import { Label } from './ui/label'
+import { MixpanelTraking } from '@/services/mixpanel'
 
 function Main() {
     const [url, setUrl] = useState(String)
     const [pageTitle, setPageTitle] = useState(String);
     const [isloading, setIsLoading] = useState<Boolean>(false);
+
+    useEffect(() => {
+        // in development dont do that 
+        MixpanelTraking.getIntance().pageViewed();
+    }, [])
 
     const handleClick = async () => {
         setIsLoading(true)
@@ -23,6 +30,8 @@ function Main() {
             console.error("Error:", error);
         } finally {
             // Establece isLoading en false una vez que la solicitud haya finalizado (éxito o error)
+            // url que funcionarion y fueron creadas
+            MixpanelTraking.getIntance().citationGenerated(url)
             setIsLoading(false);
         }
     }
