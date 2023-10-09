@@ -7,7 +7,9 @@ import { Input } from './ui/input'
 import { Button } from './ui/button'
 import CitaResult from './citaResult'
 import { Label } from './ui/label'
-import { MixpanelTraking } from '@/services/mixpanel'
+
+// NO OLVIDAD ANADIR LOS TRAKINGS EVENTS PARA PRODUCION
+// import { MixpanelTraking } from '@/services/mixpanel'
 
 function Main() {
     const [url, setUrl] = useState(String)
@@ -16,7 +18,7 @@ function Main() {
 
     useEffect(() => {
         // in development dont do that 
-        MixpanelTraking.getIntance().pageViewed();
+        // MixpanelTraking.getIntance().pageViewed();
     }, [])
 
     const handleClick = async () => {
@@ -31,7 +33,7 @@ function Main() {
         } finally {
             // Establece isLoading en false una vez que la solicitud haya finalizado (éxito o error)
             // url que funcionarion y fueron creadas
-            MixpanelTraking.getIntance().citationGenerated(url)
+            // MixpanelTraking.getIntance().citationGenerated(url)
             setIsLoading(false);
         }
     }
