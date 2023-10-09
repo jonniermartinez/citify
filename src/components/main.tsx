@@ -10,7 +10,7 @@ import { Label } from './ui/label'
 
 // NO OLVIDAD ANADIR LOS TRAKINGS EVENTS PARA PRODUCION
 // import { MixpanelTraking } from '@/services/mixpanel'
-const mainDomain = process.env.NEXT_PUBLIC_DOMAIN || "localhost:3000";
+const mainDomain = process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000";
 
 function Main() {
     const [url, setUrl] = useState(String)
@@ -25,7 +25,7 @@ function Main() {
     const handleClick = async () => {
         setIsLoading(true)
         try {
-            const res = await fetch(`http://${mainDomain}/api/getDownloads?url=${url}`);
+            const res = await fetch(`${mainDomain}/api/getDownloads?url=${url}`);
             const resPageTitle = await res.json();
             setPageTitle(resPageTitle.pageTitle);
         } catch (error) {
