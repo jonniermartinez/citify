@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 
 import { Input } from './ui/input'
@@ -17,11 +17,6 @@ function Main() {
     const [pageTitle, setPageTitle] = useState(String);
     const [isloading, setIsLoading] = useState<Boolean>(false);
 
-    useEffect(() => {
-        // in development dont do that 
-        // MixpanelTraking.getIntance().pageViewed();
-    }, [])
-
     const handleClick = async () => {
         setIsLoading(true)
         try {
@@ -30,12 +25,8 @@ function Main() {
             setPageTitle(pageInfo.pageTitle);
             console.log(pageInfo)
         } catch (error) {
-            // Manejar errores si ocurren durante la solicitud
             console.error("Error:", error);
         } finally {
-            // Establece isLoading en false una vez que la solicitud haya finalizado (éxito o error)
-            // url que funcionarion y fueron creadas
-            // MixpanelTraking.getIntance().citationGenerated(url)
             setIsLoading(false);
         }
     }

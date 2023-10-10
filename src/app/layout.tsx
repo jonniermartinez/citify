@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from '@/components/nav'
+import Script from 'next/script'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +21,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-49CWPRN0GK" />
+        <Script>
+          {
+            `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-49CWPRN0GK');`
+          }
+        </Script>
         <div className='flex flex-col justify-between'>
           <Nav></Nav>
           <main className='pattern-boxes pattern-gray-300 pattern-bg-white 
