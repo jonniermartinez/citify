@@ -28,6 +28,7 @@ export default function RootLayout({
           }
         </Script>
         <div className='flex flex-col justify-between'>
+
           <Nav></Nav>
           <main className='pattern-boxes pattern-gray-300 pattern-bg-white 
   pattern-size-8 pattern-opacity-10 w-full mb-40'>
