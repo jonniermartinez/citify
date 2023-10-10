@@ -21,9 +21,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-49CWPRN0GK" />
-        <Script>
+        <Script async id='googleAnalitics' src="https://www.googletagmanager.com/gtag/js?id=G-49CWPRN0GK" />
+        <Script id='googleAnaliticsScript'>
           {
             `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-49CWPRN0GK');`
           }
