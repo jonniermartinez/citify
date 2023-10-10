@@ -25,7 +25,6 @@ export default function RootLayout({
   pattern-size-8 pattern-opacity-10 w-full mb-40'>
             {children}
           </main>
-          <p className="text-center p-5 font-bold">Build by Jonnier ✨</p>
         </div>
       </body>
     </html>

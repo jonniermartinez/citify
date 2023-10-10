@@ -15,15 +15,17 @@ export async function GET(request: Request) {
     const $ = cheerio.load(html);
 
     const pageTitle = $('title').text();
-    console.log('Título de la página:', pageTitle);
+    //console.log('Título de la página:', pageTitle);
 
     // const metaDescription = $('meta[name="description"]');
     const author = $('meta[name="author"]').text();
     const copyright = $('meta[name="copyright"]').text();
-    console.log('Copyright (Metadata):', copyright);
-    console.log('Author (Metadata):', author);
+    const titlePropierty = $('meta[property="og:title"]').text();
+    console.log(titlePropierty)
+    //console.log('Copyright (Metadata):', copyright);
+    //console.log('Author (Metadata):', author);
 
 
-    return Response.json({ pageTitle: pageTitle });
+    return Response.json({ pageTitle: pageTitle, titlePropierty: titlePropierty });
 
 }
