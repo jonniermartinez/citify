@@ -1,8 +1,10 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl';
 
 function Nav() {
+    const translation = useTranslations('nav')
     return (
         <>
             <nav className=" border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
@@ -18,7 +20,7 @@ function Nav() {
                     </div>
                     <div className="flex items-center lg:order-2">
                         <Link href="https://twitter.com/jayddox" target='_blank'>
-                            <Button variant="link">Follow Me on Twitter (X)</Button>
+                            <Button variant="link">{translation("twitter")}</Button>
 
                         </Link>
                     </div>

@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "twitter": "Follow Me on Twitter (X)"
+    },
+    "Index": {
+        "title": "Free APA Citation Generator",
+        "cite_label": "Cite a webpage",
+        "cite_botton": "Generate APA reference",
+        "cite_toltip": "Recently cited",
+        "cite_test_ulr": "Test url",
+        "cite_retrieved": "Retrieved",
+        "cite_from": "from",
+        "cite_copy_clipboard": "Copy to clipboard",
+        "cite_toast_title": "Excellent",
+        "cite_toast_description": "Copied to the clipboard successfully 🚀"
+    }
+}

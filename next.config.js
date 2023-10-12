@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+// i18n configuration
+
+const withNextIntl = require("next-intl/plugin")(
+    "./src/i18n.ts"
+);
+
+module.exports = withNextIntl({
     async rewrites() {
         return [
             {
@@ -21,4 +27,5 @@ module.exports = {
             },
         ];
     },
-};
+});
+

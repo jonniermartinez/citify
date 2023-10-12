@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "twitter": "Sigueme en Twitter (X)"
+    },
+    "Index": {
+        "title": "Generador de citas APA gratuito",
+        "cite_label": "Cita una página web",
+        "cite_botton": "Generar referencia APA",
+        "cite_toltip": "Citado recientemente",
+        "cite_test_ulr": "Prueba la URL",
+        "cite_retrieved": "Recuperado el",
+        "cite_from": "de",
+        "cite_copy_clipboard": "Copiar al portapapeles",
+        "cite_toast_title": "Excelente",
+        "cite_toast_description": "Copiada al portapapeles con éxito 🚀"
+    }
+}

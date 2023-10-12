@@ -21,6 +21,7 @@
     "jsdom": "^22.1.0",
     "mixpanel-browser": "^2.47.0",
     "next": "latest",
+    "next-intl": "3.0.0-beta.19",
     "puppeteer": "^21.3.6",
     "react": "latest",
     "react-copy-to-clipboard": "^5.1.0",
