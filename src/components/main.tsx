@@ -7,6 +7,8 @@ import { Button } from './ui/button'
 import CitaResult from './citaResult'
 import { Label } from './ui/label'
 import { useTranslations } from 'next-intl';
+import { useToast } from "@/components/ui/use-toast"
+
 
 // NO OLVIDAD ANADIR LOS TRAKINGS EVENTS PARA PRODUCION
 // import { MixpanelTraking } from '@/services/mixpanel'
@@ -17,6 +19,8 @@ function Main() {
     const [pageTitle, setPageTitle] = useState(String);
     const [isloading, setIsLoading] = useState<Boolean>(false);
 
+    const { toast } = useToast();
+
     // translations
     const translation = useTranslations('Index')
 
@@ -25,13 +29,19 @@ function Main() {
         try {
             const res = await fetch(`${mainDomain}/api/getDownloads?url=${url}`);
             const pageInfo = await res.json();
-            setPageTitle(pageInfo.pageTitle);
+            pageInfo.pageTitle == "" ? setPageTitle("") : setPageTitle(pageInfo.pageTitle);
             console.log(pageInfo)
         } catch (error) {
             console.error("Error:", error);
+            setPageTitle("");
+            onErrorUrl()
         } finally {
             setIsLoading(false);
         }
+    }
+
+    const onErrorUrl = () => {
+        toast({ title: "URL Error", description: "please verify the url" })
     }
 
     return (
@@ -55,8 +65,9 @@ function Main() {
             {
                 isloading ? <p>Loading ...</p> : <CitaResult pageTitle={pageTitle} url={url}></CitaResult>
             }
+            {
 
-
+            }
         </div>
     )
 }

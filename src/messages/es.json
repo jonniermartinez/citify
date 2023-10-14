@@ -12,6 +12,8 @@
         "cite_from": "de",
         "cite_copy_clipboard": "Copiar al portapapeles",
         "cite_toast_title": "Excelente",
-        "cite_toast_description": "Copiada al portapapeles con éxito 🚀"
+        "cite_toast_description": "Copiada al portapapeles con éxito 🚀",
+        "cite_fech_error_title": "Error con la URL",
+        "cite_fech_error_description": "Por favor verifique la URL"
     }
 }
