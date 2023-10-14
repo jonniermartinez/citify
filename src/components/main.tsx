@@ -9,6 +9,8 @@ import { Label } from './ui/label'
 import { useTranslations } from 'next-intl';
 import { useToast } from "@/components/ui/use-toast"
 
+import { useEffect } from 'react'
+
 
 // NO OLVIDAD ANADIR LOS TRAKINGS EVENTS PARA PRODUCION
 // import { MixpanelTraking } from '@/services/mixpanel'
@@ -41,9 +43,12 @@ function Main() {
     }
 
     const onErrorUrl = () => {
-        toast({ title: "URL Error", description: "please verify the url" })
+        toast({ title: translation("cite_fech_error_title"), description: translation("cite_fech_error_description") })
     }
 
+    useEffect(() => {
+        setPageTitle("");
+    }, [url])
     return (
         <div className='w-full flex flex-col items-center justify-center mt-8'>
             <div className='max-w-md text-center'>
