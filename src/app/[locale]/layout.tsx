@@ -34,14 +34,14 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <Script async id='googleAnalitics' src="https://www.googletagmanager.com/gtag/js?id=G-49CWPRN0GK" />
         <Script id='googleAnaliticsScript'>
           {
             `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-49CWPRN0GK');`
           }
         </Script>
-        <div className='flex flex-col justify-between'>
+        <div className='flex flex-col max-w-7xl mx-auto justify-between'>
           <NextIntlClientProvider
             locale={locale}
             messages={messages}
