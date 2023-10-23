@@ -1,6 +1,8 @@
 "use client"
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { Inter } from "next/font/google"
+const inter = Inter({ subsets: ['latin'] })
 
 
 interface Props {
@@ -31,7 +33,7 @@ function Citiation({ pageTitle, url, author, source }: Props) {
                     <div className='font-serif'>
                         <div>
                             {/* Author */}
-                            <span className={`${titleClass} bg-violet-600`} hidden={authorHover ? false : true} >Author</span>
+                            <span className={`${titleClass} bg-violet-600 ${inter.className}`} hidden={authorHover ? false : true} >Author</span>
                             <span
                                 className='relative hover:bg-violet-600 hover:text-white cursor-cell'
                                 onMouseOver={() => setAuthorHover(true)}
@@ -40,7 +42,7 @@ function Citiation({ pageTitle, url, author, source }: Props) {
                             </span>
                             {" "}
                             {/* Title */}
-                            <span className={`${titleClass} bg-pink-700`} hidden={titleHover ? false : true}>Title</span>
+                            <span className={`${titleClass} bg-pink-700 ${inter.className}`} hidden={titleHover ? false : true}>Title</span>
                             <span
                                 className='relative hover:bg-pink-700 hover:text-white cursor-cell'
                                 onMouseOver={() => setTitleHover(true)}
@@ -50,7 +52,7 @@ function Citiation({ pageTitle, url, author, source }: Props) {
                             </span>
                             {cita}
                             <p>
-                                <span className={`${titleClass} bg-amber-600`} hidden={urlHover ? false : true}>URL</span>
+                                <span className={`${titleClass} bg-amber-600 ${inter.className}`} hidden={urlHover ? false : true}>URL</span>
 
                                 <span className="relative text-sky-800 hover:text-white hover:bg-amber-600 cursor-cell"
                                     onMouseOver={() => setUrlHover(true)}
