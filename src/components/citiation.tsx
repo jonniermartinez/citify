@@ -50,7 +50,7 @@ function Citiation({ pageTitle, url, author, source }: Props) {
                             </span>
                             {cita}
                             <p>
-                                <span className={`${titleClass} bg-amber-600`} hidden={urlHover ? false : true}>Title</span>
+                                <span className={`${titleClass} bg-amber-600`} hidden={urlHover ? false : true}>URL</span>
 
                                 <span className="relative text-sky-800 hover:text-white hover:bg-amber-600 cursor-cell"
                                     onMouseOver={() => setUrlHover(true)}
