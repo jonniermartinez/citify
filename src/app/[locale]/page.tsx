@@ -12,7 +12,7 @@ export default function Home() {
       <CitiationExamples></CitiationExamples>
       <Toaster></Toaster>
       <CitiationAnathomic></CitiationAnathomic>
-      {/* <Waitlist></Waitlist> */}
+      <Waitlist></Waitlist>
 
     </>
   )
