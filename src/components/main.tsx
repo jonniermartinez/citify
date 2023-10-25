@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from 'react'
-
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import CitaResult from './citaResult'
@@ -57,14 +56,14 @@ function Main() {
     }, [url])
 
     return (
-        <div className='w-full flex flex-col items-center mt-20 '>
+        <div className='w-full flex flex-col items-center mt-20'>
             <div className='max-w-md text-center'>
                 <h1 data-testid="hero-text" className="relative font-display text-4xl font-extrabold leading-[1.15] text-black sm:text-5xl sm:leading-[1.15]">
                     <span className="bg-gradient-to-r from-violet-800 via-fuchsia-800 to-rose-400 bg-clip-text text-transparent">{translation("title")}</span>
                 </h1>
-                <div className='absolute mx-56 translate-x-96 -rotate-90'>
+                <div className='absolute translate-x-[30vw] -rotate-90'>
                     <svg fill="#14b8a6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                        width="30px" height="300px" viewBox="0 0 266.495 266.494"
+                        width="30px" height="30px" viewBox="0 0 266.495 266.494"
                     >
                         <g>
                             <g>
@@ -77,7 +76,7 @@ function Main() {
                     </svg>
 
                 </div>
-                <div className='flex flex-col gap-6 mt-8'>
+                <div className='flex flex-col gap-6 mt-10 px-8'>
                     <div className='flex flex-col gap-2 items-start'>
                         <Label className="">{translation("cite_label")}</Label>
                         <Input
@@ -86,7 +85,7 @@ function Main() {
                         >
                         </Input>
                     </div>
-                    <Button onClick={() => handleClick()}>{translation("cite_botton")}</Button>
+                    <Button onClick={() => handleClick()} id='citegenerated'>{translation("cite_botton")}</Button>
                 </div>
             </div>
             {

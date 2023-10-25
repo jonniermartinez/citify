@@ -30,7 +30,7 @@ export default function CitaResult({ pageTitle, url, author, source }: Props) {
             return (<></>)
         } else {
             return (
-                <div className='mt-16 w-96 md:w-1/2 flex justify-center'>
+                <div className='mt-16 w-72 md:w-1/2 flex justify-center'>
                     <div className='absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary'>{translation("cite_toltip")}</div>
                     <div className='w-full overflow-hidden rounded-xl border border-navy-blue-6 shadow-sm'>
                         <div className='space-y-6 p-6'>

@@ -23,7 +23,7 @@ function Citiation({ pageTitle, url, author, source }: Props) {
     const cita = ` - ${translation("cite_retrieved")} 6/9/2023 ${translation("cite_from")} `
 
     return (
-        <div className='mt-16 w-96 md:w-5/12 h-48 flex justify-center'>
+        <div className='mt-16 w-72 md:w-5/12 h-48 flex justify-center'>
             <div className='absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary'>{source}</div>
             <div className='w-full overflow-hidden rounded-xl border border-navy-blue-6 shadow-sm'>
                 <div className='space-y-6 p-6'>
