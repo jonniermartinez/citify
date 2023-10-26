@@ -19,7 +19,7 @@ function Nav() {
 
                     </div>
                     <div className="flex items-center lg:order-2">
-                        <Link href="https://twitter.com/jayddox" target='_blank'>
+                        <Link href="https://twitter.com/jonniermartinez" target='_blank'>
                             <Button variant="link">{translation("twitter")}</Button>
 
                         </Link>
