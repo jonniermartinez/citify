@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Inter } from "next/font/google";
+
 const inter = Inter({ subsets: ["latin"] });
 
 interface Props {

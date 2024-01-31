@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Nav from "@/components/nav";
 import Script from "next/script";
+import { unstable_setRequestLocale } from "next-intl/server";
+
+const locales = ["en", "es"];
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,14 +14,19 @@ export const metadata: Metadata = {
   description: "Generador de citas APA",
 };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 interface Props {
   params: { locale: string };
   children: React.ReactNode;
 }
 
 export default async function RootLayout({ children, params }: Props) {
+  unstable_setRequestLocale(params.locale);
   return (
-    <html lang="en">
+    <html lang={params.locale}>
       <body className={`${inter.className}`}>
         <Script
           async
