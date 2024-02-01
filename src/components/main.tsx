@@ -19,6 +19,7 @@ function Main() {
   const [pageAuthor, setPageAuthor] = useState(String);
   const [pageSource, setPageSource] = useState(String);
   const [pageUrl, setPageUrl] = useState(String);
+  const [publishedDate, setPublishedDate] = useState(String);
 
   const [isloading, setIsLoading] = useState<Boolean>(false);
 
@@ -37,6 +38,9 @@ function Main() {
       pageInfo.source == ""
         ? setPageSource("")
         : setPageSource(pageInfo.source);
+      pageInfo.publishedDate == ""
+        ? setPublishedDate("")
+        : setPublishedDate(pageInfo.publishedDate);
     } catch (error) {
       console.error("Error:", error);
       setPageTitle("");
@@ -104,6 +108,7 @@ function Main() {
         <p>Loading ...</p>
       ) : (
         <CitaResult
+          publishedDate={publishedDate}
           author={pageAuthor}
           source={pageSource}
           pageTitle={pageTitle}

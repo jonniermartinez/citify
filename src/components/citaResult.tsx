@@ -8,9 +8,16 @@ interface Props {
   url: string;
   author: string;
   source: string;
+  publishedDate: string;
 }
 
-export default function CitaResult({ pageTitle, url, author, source }: Props) {
+export default function CitaResult({
+  pageTitle,
+  url,
+  author,
+  source,
+  publishedDate,
+}: Props) {
   console.log(source);
 
   const now = new Date();
@@ -22,7 +29,7 @@ export default function CitaResult({ pageTitle, url, author, source }: Props) {
 
   const cita = `${
     author === "" ? author : `${author}.`
-  } ${pageTitle} - Retrieved ${day}/${month}/${year} from `;
+  } ${publishedDate} ${pageTitle} - Retrieved ${day}/${month}/${year} from `;
 
   if (pageTitle != undefined) {
     if (pageTitle.length == 0) {

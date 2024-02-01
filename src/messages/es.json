@@ -1,19 +1,35 @@
 {
-    "nav": {
+    "navigation": {
         "twitter": "Twitter (X)"
     },
-    "Index": {
-        "title": "Generador de citas APA gratuito",
-        "cite_label": "Cita una página web",
-        "cite_botton": "Generar referencia APA",
-        "cite_toltip": "Citado recientemente",
-        "cite_test_ulr": "Prueba la URL",
-        "cite_retrieved": "Recuperado el",
-        "cite_from": "de",
-        "cite_copy_clipboard": "Copiar al portapapeles",
-        "cite_toast_title": "Excelente",
-        "cite_toast_description": "Copiada al portapapeles con éxito 🚀",
-        "cite_fech_error_title": "Error con la URL",
-        "cite_fech_error_description": "Por favor verifique la URL"
+    "Home": {
+        "Header": {
+            "title": "Free APA Citation Generator"
+        },
+        "section1": {
+            "title":"Citiation Examples"
+        },
+        "section2": {
+            "title":"APA Citiation Anathomic"
+        }
+    },
+    "components": {
+        "citeGenerator": {
+            "label": "Cite a webpage",
+            "button": "Generate APA reference"
+        },
+        "cite-result": {
+            "toltip":  "Recently cited",
+            "test-ulr": "Test url",
+            "retrieved": "Retrieved",
+            "cite-from": "from",
+            "copy-clipboard": "Copy to clipboard"
+        }
+    },
+    "alerts": {
+        "cite_toast_title": "Excellent",
+        "cite_toast_description": "Copied to the clipboard successfully 🚀",
+        "cite_fech_error_title": "URL Error",
+        "cite_fech_error_description": "Please verify the URL"
     }
 }
