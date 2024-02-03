@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: Props) {
         </Script>
         <div className="flex flex-col max-w-7xl mx-auto justify-between">
           <Nav></Nav>
-          <main className="pattern-boxes pattern-gray-300 pattern-bg-white pattern-size-8 pattern-opacity-10 w-full mb-40">
+          <main className="pattern-boxes mt-20 pattern-gray-300 pattern-bg-white pattern-size-8 pattern-opacity-10 w-full mb-40">
             {children}
           </main>
         </div>
