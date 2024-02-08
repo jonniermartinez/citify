@@ -69,7 +69,11 @@ function Main() {
 
   const citiations = Object.keys(citiationStyles).map(
     (value: string): JSX.Element => {
-      return <SelectItem value={value}>{value}</SelectItem>;
+      return (
+        <SelectItem key={value} value={value}>
+          {value}
+        </SelectItem>
+      );
     }
   );
 
