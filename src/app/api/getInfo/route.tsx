@@ -4,6 +4,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const url: any = searchParams.get("url");
 
+  // TODO: Si es un link de youtubute hacer scraping
+
   // here we use top-level await, assume current platform supports it
   try {
     const article = await extract(url);

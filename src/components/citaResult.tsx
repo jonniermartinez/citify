@@ -11,6 +11,7 @@ interface Props {
   publishedDate: string;
 }
 
+// TODO: Solo recibira la en texto plano la armaré en la funciones correspondientes
 export default function CitaResult({
   pageTitle,
   url,
@@ -36,7 +37,7 @@ export default function CitaResult({
       return <></>;
     } else {
       return (
-        <div className="mt-16 w-72 md:w-1/2 flex justify-center">
+        <div className="mt-16 w-72 md:w-full flex justify-center">
           <div className="absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary">
             Recently cited
           </div>

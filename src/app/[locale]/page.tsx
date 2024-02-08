@@ -11,22 +11,24 @@ export default function Home() {
   const t = useTranslations("Index");
 
   const classes = {
-    container: cn("max-w-md text-center mx-auto"),
+    container: cn("max-w-2xl text-center mx-auto"),
     title: cn(
-      "relative",
+      "max-w-md relative text-center mx-auto",
       "font-display text-4xl font-extrabold leading-[1.15] text-black",
       "sm:text-5xl sm:leading-[1.15]",
       "bg-gradient-to-r from-violet-800 via-fuchsia-800 to-rose-400 bg-clip-text text-transparent"
     ),
-    imageCursor: cn("absolute translate-x-[30vw] -rotate-90"),
+    imageCursor: cn(
+      "absolute translate-x-[48vw] translate-y-[60px] -rotate-90"
+    ),
   };
 
   return (
     <>
+      <h1 data-testid="hero-text" className={classes.title}>
+        Free APA Citation Generator
+      </h1>
       <section className={classes.container}>
-        <h1 data-testid="hero-text" className={classes.title}>
-          Free APA Citation Generator
-        </h1>
         <div className={classes.imageCursor}>
           <Image src={cursor} alt={""}></Image>
         </div>
