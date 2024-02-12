@@ -2,13 +2,13 @@ import Main from "@/app/[locale]/components/main";
 import { Toaster } from "@/components/ui/toaster";
 import CitiationExamples from "@/components/citiationExamples";
 import CitiationAnathomic from "@/components/citiationAnathomic";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import cursor from "@/assets/cursos.svg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
-  const t = useTranslations("Index");
+  // const t = useTranslations("Index");
 
   const classes = {
     container: cn("max-w-2xl text-center mx-auto"),

@@ -31,5 +31,8 @@
         "cite_toast_description": "Copied to the clipboard successfully 🚀",
         "cite_fech_error_title": "URL Error",
         "cite_fech_error_description": "Please verify the URL"
+    },
+    "citiation": {
+        "retrieved-from": "Recuperado de"
     }
 }
