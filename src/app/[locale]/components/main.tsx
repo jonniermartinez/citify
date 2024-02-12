@@ -5,7 +5,6 @@ import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import CitaResult from "../../../components/citaResult";
 import { Toaster, toast } from "sonner";
-import { useToast } from "@/components/ui/use-toast";
 import {
   Select,
   SelectContent,
@@ -15,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { citiationStyles } from "@/services/citiationStyle";
 import type { citiationStylesName } from "@/services/citiationStyle";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 function Main() {
@@ -26,12 +25,15 @@ function Main() {
 
   const [isloading, setIsLoading] = useState<Boolean>(false);
   const params = useParams<{ locale: string }>();
+  const router = useRouter();
 
   useEffect(() => {
     setError(false);
   }, [style, url]);
 
   const handleClick = async () => {
+    // TODO: mejorar los mensajes de erro
+
     if (!style || !url) {
       toast.error("no pueden esta vacios");
       setError(true);
@@ -44,12 +46,13 @@ function Main() {
       }
     );
 
-    if (result == "error") {
+    if (result.citiation_result == "Error generating citation") {
       toast.error("error please verify the url");
       setError(true);
       return;
     }
-    setCIte(result);
+    // router.push(`${params.locale}/result`);
+    setCIte(result.citiation_result);
   };
 
   const citiations = Object.keys(citiationStyles).map(
@@ -73,7 +76,7 @@ function Main() {
       <div className="flex flex-col gap-6 mt-10 px-8">
         <div className="flex flex-col gap-2 items-start">
           {/* <Label className="">Cite a webpage</Label> */}
-          <div className="w-full flex gap-3  rounded-sm ">
+          <div className="w-full flex flex-wrap gap-3 justify-center rounded-sm ">
             <Select
               onValueChange={(v) => handleStyleChage(v as citiationStylesName)}
             >
@@ -85,7 +88,10 @@ function Main() {
               <SelectContent>{citiations}</SelectContent>
             </Select>
             <Input
-              className={cn("w-[60%]", error && "border-red-600 text-red-600")}
+              className={cn(
+                "w-full max-w-xs",
+                error && "border-red-600 text-red-600"
+              )}
               placeholder="https://es.wikipedia.org/wiki/Dante_Alighieri"
               onChange={(e) => setUrl(e.target.value)}
             ></Input>

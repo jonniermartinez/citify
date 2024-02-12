@@ -1,18 +1,31 @@
-interface ApaCitation {
-  title: string;
-  author: string;
-  source: string;
-  publishedDate: string;
-  url: string;
-}
+import { Citiatoin, ApaCitation } from "@/lib/types";
+
 const mainDomain = process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000";
 
 export async function Apa6daEdicion(
   url: string,
   lang: string
-): Promise<string> {
-  // AUTOR. (2024, 24 enero). PAGETITLE. Recuperado de URL
+): Promise<Citiatoin> {
+  const apaStyle = lang === "es" ? "APA 6 edeción" : "APA 6th edition";
+  const anatomic = lang === "es" ? "" : "";
+  const textual_anatomic = lang === "es" ? "" : "";
+  const info =
+    lang === "es" ? " Información en español" : "Información en ingles";
+
+  const citiation_examples_en = ["", ""];
+  const citiation_examples_es = ["", ""];
+
+  const textual_citiation_examples_en = ["", ""];
+  const textual_citiation_examples_es = ["", ""];
   const retrieved = lang === "es" ? "Recuperado de" : "Retrieved from";
+
+  const citiation_examples =
+    lang === "es" ? citiation_examples_es : citiation_examples_en;
+  const textual_citiation_examples =
+    lang === "es"
+      ? textual_citiation_examples_es
+      : textual_citiation_examples_en;
+
   try {
     const result = await fetch(`${mainDomain}/api/getInfo?url=${url}`);
     const data: ApaCitation | undefined = await result.json();
@@ -26,14 +39,32 @@ export async function Apa6daEdicion(
         ? `(${data.publishedDate}).`
         : "";
 
-      const citation = `${author}. ${publishedDate} ${data.title}. ${retrieved} ${url}`;
-      return citation;
+      const citiation_result = `${author}. ${publishedDate} ${data.title}. ${retrieved} ${url}`;
+      return {
+        apaStyle,
+        info,
+        url,
+        citiation_result,
+        citiation_examples,
+        textual_anatomic,
+        textual_citiation_examples,
+        anatomic,
+      };
     } else {
       throw new Error("Data is undefined");
     }
   } catch (error) {
     console.error(error);
-    return "error";
+    return {
+      apaStyle,
+      info,
+      url,
+      citiation_result: "Error generating citation",
+      citiation_examples: [],
+      textual_citiation_examples: [],
+      textual_anatomic,
+      anatomic,
+    };
   }
 }
 export function Apa7maEdicion(input: string): string {

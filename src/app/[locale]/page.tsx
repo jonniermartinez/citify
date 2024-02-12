@@ -19,7 +19,7 @@ export default function Home() {
       "bg-gradient-to-r from-violet-800 via-fuchsia-800 to-rose-400 bg-clip-text text-transparent"
     ),
     imageCursor: cn(
-      "absolute translate-x-[48vw] translate-y-[60px] -rotate-90"
+      "absolute translate-x-[80vw] md:translate-x-[48vw] md:translate-y-[60px] translate-y-[100px] -rotate-90"
     ),
   };
 
