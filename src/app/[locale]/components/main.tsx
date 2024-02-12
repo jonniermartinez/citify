@@ -5,6 +5,7 @@ import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
 import CitaResult from "../../../components/citaResult";
 import { Toaster, toast } from "sonner";
+// import useCart from "@/hooks/citiation-state";
 import {
   Select,
   SelectContent,
@@ -18,6 +19,14 @@ import { useRouter, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 function Main() {
+  const router = useRouter();
+  //const cart = useCart();
+  // cart.addCitiation("jonnier");
+
+  useEffect(() => {
+    //console.log(cart.url);
+  }, []);
+
   const [url, setUrl] = useState(String);
   const [cite, setCIte] = useState("");
   const [style, setStyle] = useState<citiationStylesName>();
@@ -25,7 +34,6 @@ function Main() {
 
   const [isloading, setIsLoading] = useState<Boolean>(false);
   const params = useParams<{ locale: string }>();
-  const router = useRouter();
 
   useEffect(() => {
     setError(false);
@@ -51,6 +59,7 @@ function Main() {
       setError(true);
       return;
     }
+    // actualizar el estado de la cita actual
     // router.push(`${params.locale}/result`);
     setCIte(result.citiation_result);
   };
@@ -112,7 +121,7 @@ function Main() {
           <CitaResult cite={cite}></CitaResult>
         )
       ) : (
-        ""
+        <></>
       )}
     </>
   );

@@ -22,13 +22,13 @@ function CitiationAnathomic() {
             </span>
             <span className="relative bg-violet-600 text-white cursor-cell">
               Abhinav Upadhyay.
-            </span>{" "}
+            </span>
             <span className={`${tileClass} bg-pink-700 ${inter.className}`}>
               Title
             </span>
             <span className="relative bg-pink-700 text-white cursor-cell">
               What Every Developer Should Know About GPU Computing
-            </span>{" "}
+            </span>
             <span
               className={`${tileClass} bg-green-600 ${inter.className} translate-y-0 translate-x-24`}
             >
@@ -36,7 +36,7 @@ function CitiationAnathomic() {
             </span>
             <span className="relative bg-green-600 text-white cursor-cell ">
               6/9/2023
-            </span>{" "}
+            </span>
             <div>
               <span
                 className={`${tileClass} bg-amber-600 ${inter.className} md:translate-y-8 translate-y-14`}

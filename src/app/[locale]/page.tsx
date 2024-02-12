@@ -30,15 +30,12 @@ export default function Home() {
       </h1>
       <section className={classes.container}>
         <div className={classes.imageCursor}>
-          <Image src={cursor} alt={""}></Image>
+          <Image src={cursor} alt={"sdsadas"}></Image>
         </div>
         <Main></Main>
       </section>
-      <section>
-        <CitiationExamples></CitiationExamples>
-      </section>
+      <section>{/* <CitiationExamples></CitiationExamples> */}</section>
       <Toaster></Toaster>
-      <CitiationAnathomic></CitiationAnathomic>
     </>
   );
 }
