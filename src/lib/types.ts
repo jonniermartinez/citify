@@ -6,7 +6,6 @@ export interface Citiatoin {
   citiation_examples: string[];
   textual_citiation_examples: string[];
   textual_anatomic: string;
-
   anatomic: string;
 }
 

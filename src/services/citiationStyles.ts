@@ -11,5 +11,5 @@ export type ConverterFunctionsObject = {
 
 export const citiationStyles: ConverterFunctionsObject = {
   "APA 6th": (url: string, lang: string) => Apa6daEdicion(url, lang),
-  "APA 7th": (url: string) => Apa6daEdicion(url, "en"),
+  "APA 7th": (url: string, lang: string) => Apa6daEdicion(url, lang),
 };

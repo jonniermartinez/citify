@@ -1,15 +1,30 @@
 import { create } from "zustand";
+import { Citiatoin } from "@/lib/types";
 
-interface CartStore {
-  addCitiation(arg0: string): unknown;
-  url: string;
+interface CartStore extends Citiatoin {
+  addCitiation(arg0: Citiatoin): unknown;
 }
 
-const useCart = create<CartStore>((set, get) => ({
+const useCitiation = create<CartStore>((set, get) => ({
+  apaStyle: "",
+  info: "",
   url: "",
-  addCitiation: (data: string) => {
-    set({ url: data });
+  citiation_result: "",
+  citiation_examples: [],
+  textual_citiation_examples: [],
+  textual_anatomic: "",
+  anatomic: "",
+  addCitiation: (data: Citiatoin) => {
+    set({
+      apaStyle: data.apaStyle,
+      info: data.info,
+      url: data.url,
+      citiation_result: data.citiation_result,
+      citiation_examples: data.citiation_examples,
+      textual_anatomic: data.textual_anatomic,
+      anatomic: data.anatomic,
+    });
   },
 }));
 
-export default useCart;
+export default useCitiation;

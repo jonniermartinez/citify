@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
-import CitaResult from "../../../components/citaResult";
 import { Toaster, toast } from "sonner";
-// import useCart from "@/hooks/citiation-state";
+import useCitiation from "@/hooks/citiation-state";
 import {
   Select,
   SelectContent,
@@ -21,14 +20,13 @@ import { cn } from "@/lib/utils";
 // TODO: rename the component name
 export default function Main(): JSX.Element {
   const router = useRouter();
-  //const cart = useCart();
-  // cart.addCitiation("jonnier");
+  const citiation = useCitiation();
   // TODO: implement global estate of an citiation
 
   const [url, setUrl] = useState(String);
   const [cite, setCIte] = useState(String);
   // TODO: add an deafult style
-  const [style, setStyle] = useState<citiationStylesName>("APA 7th");
+  const [style, setStyle] = useState<citiationStylesName>("APA 6th");
   const [error, setError] = useState(false);
   const [isloading, setIsLoading] = useState<Boolean>(false);
 
@@ -46,6 +44,8 @@ export default function Main(): JSX.Element {
       return;
     }
     setIsLoading(true);
+    console.log(style);
+    console.log(url);
     const result = await citiationStyles[style](url, params.locale).finally(
       () => {
         setIsLoading(false);
@@ -57,9 +57,20 @@ export default function Main(): JSX.Element {
       setError(true);
       return;
     }
-    // TODO: here update the global state with the result
-    // router.push(`${params.locale}/result`);
+
+    citiation.addCitiation({
+      apaStyle: result.apaStyle,
+      info: result.info,
+      url: result.url,
+      citiation_result: result.citiation_result,
+      citiation_examples: result.citiation_examples,
+      textual_citiation_examples: result.textual_citiation_examples,
+      textual_anatomic: result.textual_anatomic,
+      anatomic: result.anatomic,
+    });
+
     setCIte(result.citiation_result);
+    router.push(`${params.locale}/result`);
   };
 
   const citiations = Object.keys(citiationStyles).map(
@@ -113,15 +124,6 @@ export default function Main(): JSX.Element {
           </div>
         </div>
       </div>
-      {cite ? (
-        isloading ? (
-          <p>Loading ...</p>
-        ) : (
-          <CitaResult cite={cite}></CitaResult>
-        )
-      ) : (
-        <></>
-      )}
     </>
   );
 }
