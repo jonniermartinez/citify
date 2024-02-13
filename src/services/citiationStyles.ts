@@ -1,7 +1,7 @@
 import { Citiatoin } from "@/lib/types";
-import { Apa6daEdicion } from "./functions/apa";
+import { Apa6daEdicion } from "./functions/apa6";
 
-export type citiationStylesName = "APA 6th" | "pascalse";
+export type citiationStylesName = "APA 6th" | "APA 7th";
 
 export type citiationStyles = (url: string, lang: string) => Promise<Citiatoin>;
 
@@ -11,5 +11,5 @@ export type ConverterFunctionsObject = {
 
 export const citiationStyles: ConverterFunctionsObject = {
   "APA 6th": (url: string, lang: string) => Apa6daEdicion(url, lang),
-  pascalse: (url: string) => Apa6daEdicion(url, "en"),
+  "APA 7th": (url: string) => Apa6daEdicion(url, "en"),
 };

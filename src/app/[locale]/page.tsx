@@ -2,7 +2,6 @@ import Main from "@/app/[locale]/components/main";
 import { Toaster } from "@/components/ui/toaster";
 import CitiationExamples from "@/components/citiationExamples";
 import CitiationAnathomic from "@/components/citiationAnathomic";
-// import { useTranslations } from "next-intl";
 import cursor from "@/assets/cursos.svg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -34,7 +33,10 @@ export default function Home() {
         </div>
         <Main></Main>
       </section>
-      <section>{/* <CitiationExamples></CitiationExamples> */}</section>
+
+      {/* 
+      // TODO: verify the toaster ¿what are it doing?
+       */}
       <Toaster></Toaster>
     </>
   );

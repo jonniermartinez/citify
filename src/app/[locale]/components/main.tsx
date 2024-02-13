@@ -13,26 +13,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { citiationStyles } from "@/services/citiationStyle";
-import type { citiationStylesName } from "@/services/citiationStyle";
+import { citiationStyles } from "@/services/citiationStyles";
+import type { citiationStylesName } from "@/services/citiationStyles";
 import { useRouter, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-function Main() {
+// TODO: rename the component name
+export default function Main(): JSX.Element {
   const router = useRouter();
   //const cart = useCart();
   // cart.addCitiation("jonnier");
-
-  useEffect(() => {
-    //console.log(cart.url);
-  }, []);
+  // TODO: implement global estate of an citiation
 
   const [url, setUrl] = useState(String);
-  const [cite, setCIte] = useState("");
-  const [style, setStyle] = useState<citiationStylesName>();
+  const [cite, setCIte] = useState(String);
+  // TODO: add an deafult style
+  const [style, setStyle] = useState<citiationStylesName>("APA 7th");
   const [error, setError] = useState(false);
-
   const [isloading, setIsLoading] = useState<Boolean>(false);
+
   const params = useParams<{ locale: string }>();
 
   useEffect(() => {
@@ -40,8 +39,7 @@ function Main() {
   }, [style, url]);
 
   const handleClick = async () => {
-    // TODO: mejorar los mensajes de erro
-
+    // TODO: Improve message errors
     if (!style || !url) {
       toast.error("no pueden esta vacios");
       setError(true);
@@ -59,7 +57,7 @@ function Main() {
       setError(true);
       return;
     }
-    // actualizar el estado de la cita actual
+    // TODO: here update the global state with the result
     // router.push(`${params.locale}/result`);
     setCIte(result.citiation_result);
   };
@@ -79,6 +77,7 @@ function Main() {
     setStyle(value);
   };
 
+  // TODO: implement the classes sematic with cn utility
   return (
     <>
       <Toaster position="top-center" richColors />
@@ -92,13 +91,13 @@ function Main() {
               <SelectTrigger
                 className={cn("w-fit", error && "border-red-600 text-red-600")}
               >
-                <SelectValue className="" placeholder="Citiation Style" />
+                <SelectValue className="" placeholder={style} />
               </SelectTrigger>
               <SelectContent>{citiations}</SelectContent>
             </Select>
             <Input
               className={cn(
-                "w-full max-w-xs",
+                "w-full max-w-[370px]",
                 error && "border-red-600 text-red-600"
               )}
               placeholder="https://es.wikipedia.org/wiki/Dante_Alighieri"
@@ -126,5 +125,3 @@ function Main() {
     </>
   );
 }
-
-export default Main;
