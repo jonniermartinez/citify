@@ -94,7 +94,6 @@ export default function Main(): JSX.Element {
       <Toaster position="top-center" richColors />
       <div className="flex flex-col gap-6 mt-10 px-8">
         <div className="flex flex-col gap-2 items-start">
-          {/* <Label className="">Cite a webpage</Label> */}
           <div className="w-full flex flex-wrap gap-3 justify-center rounded-sm ">
             <Select
               onValueChange={(v) => handleStyleChage(v as citiationStylesName)}
@@ -122,6 +121,7 @@ export default function Main(): JSX.Element {
               Get cite
             </Button>
           </div>
+          {isloading ? <>Loading...</> : ""}
         </div>
       </div>
     </>

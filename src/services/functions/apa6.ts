@@ -37,7 +37,9 @@ export async function Apa6daEdicion(
       const author = data.author ? data.author : data.source;
       const publishedDate = data.publishedDate
         ? `(${data.publishedDate}).`
-        : "";
+        : lang === "es"
+        ? "s.f."
+        : "n.d.";
 
       const citiation_result = `${author}. ${publishedDate} ${data.title}. ${retrieved} ${url}`;
       return {

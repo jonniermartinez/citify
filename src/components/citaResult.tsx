@@ -19,7 +19,7 @@ export default function CitaResult({ cite }: Props) {
   const cita = cite;
 
   return (
-    <div className="mt-16 w-72 md:w-full flex justify-center">
+    <div className=" w-72 md:w-full flex justify-center">
       <div className="absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary">
         Recently cited
       </div>

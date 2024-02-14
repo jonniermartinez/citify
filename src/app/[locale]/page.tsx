@@ -12,9 +12,9 @@ export default function Home() {
   const classes = {
     container: cn("max-w-2xl text-center mx-auto"),
     title: cn(
-      "max-w-md relative text-center mx-auto",
+      "max-w-xl relative text-center mx-auto",
       "font-display text-4xl font-extrabold leading-[1.15] text-black",
-      "sm:text-5xl sm:leading-[1.15]",
+      "sm:text-6xl sm:leading-[1.15]",
       "bg-gradient-to-r from-violet-800 via-fuchsia-800 to-rose-400 bg-clip-text text-transparent"
     ),
     imageCursor: cn(
