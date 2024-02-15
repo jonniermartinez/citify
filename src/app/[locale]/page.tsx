@@ -1,7 +1,5 @@
 import Main from "@/app/[locale]/components/main";
 import { Toaster } from "@/components/ui/toaster";
-import CitiationExamples from "@/components/citiationExamples";
-import CitiationAnathomic from "@/components/citiationAnathomic";
 import cursor from "@/assets/cursos.svg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";

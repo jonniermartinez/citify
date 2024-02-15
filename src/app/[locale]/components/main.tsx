@@ -63,6 +63,7 @@ export default function Main(): JSX.Element {
       info: result.info,
       url: result.url,
       citiation_result: result.citiation_result,
+      textual_citiation_result: result.textual_citiation_result,
       citiation_examples: result.citiation_examples,
       textual_citiation_examples: result.textual_citiation_examples,
       textual_anatomic: result.textual_anatomic,

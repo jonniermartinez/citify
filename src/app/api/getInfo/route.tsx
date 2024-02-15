@@ -16,10 +16,11 @@ export async function GET(request: Request) {
       let lastmodifiedDate;
 
       if (match) {
-        const fechaCompleta = match[1];
+        const fechaCompleta = match[2];
         lastmodifiedDate = fechaCompleta;
       }
 
+      console.log(lastmodifiedDate);
       return Response.json({
         title: article?.title,
         url: article?.url,
