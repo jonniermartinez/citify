@@ -1,5 +1,5 @@
 import { Citiatoin } from "@/lib/types";
-import { Apa6daEdicion } from "./functions/apa6";
+import { Apa6daEdicion } from "./functions/apa6/apa6";
 
 export type citiationStylesName = "APA 6th" | "APA 7th";
 

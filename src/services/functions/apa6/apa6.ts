@@ -2,21 +2,27 @@ import { Citiatoin, ApaCitation } from "@/lib/types";
 
 const mainDomain = process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000";
 
+import anatomicImage from "./assets/AnatomiaAPA6 (english).svg";
+import anatomicTextualImage from "./assets/Anatomia APA 6 textual (english).svg";
+
 export async function Apa6daEdicion(
   url: string,
   lang: string
 ): Promise<Citiatoin> {
   const apaStyle = lang === "es" ? "APA 6 edeción" : "APA 6th edition";
-  const anatomic = lang === "es" ? "" : "";
-  const textual_anatomic = lang === "es" ? "" : "";
+  const anatomic = lang === "es" ? "" : anatomicImage;
+  const textual_anatomic = lang === "es" ? "" : anatomicTextualImage;
   const info =
     lang === "es" ? " Información en español" : "Información en ingles";
 
-  const citiation_examples_en = ["", ""];
-  const citiation_examples_es = ["", ""];
+  // esta parte todavia no lo haré
+  const citiation_examples_en = [""];
+  const citiation_examples_es = [""];
 
   const textual_citiation_examples_en = [""];
   const textual_citiation_examples_es = [""];
+  /* *************** */
+
   const retrieved = lang === "es" ? "Recuperado de" : "Retrieved from";
 
   const citiation_examples =

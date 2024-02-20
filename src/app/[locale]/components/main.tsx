@@ -108,7 +108,7 @@ export default function Main(): JSX.Element {
             </Select>
             <Input
               className={cn(
-                "w-full max-w-[370px]",
+                "w-full max-w-[400px]",
                 error && "border-red-600 text-red-600"
               )}
               placeholder="https://es.wikipedia.org/wiki/Dante_Alighieri"
