@@ -13,7 +13,9 @@ export async function Apa6daEdicion(
   const anatomic = lang === "es" ? "" : anatomicImage;
   const textual_anatomic = lang === "es" ? "" : anatomicTextualImage;
   const info =
-    lang === "es" ? " Información en español" : "Información en ingles";
+    lang === "es"
+      ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi deserunt quo et error"
+      : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi deserunt quo et error";
 
   // esta parte todavia no lo haré
   const citiation_examples_en = [""];

@@ -17,8 +17,12 @@ import type { citiationStylesName } from "@/services/citiationStyles";
 import { useRouter, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
+interface Props {
+  generate: string;
+}
+
 // TODO: rename the component name
-export default function Main(): JSX.Element {
+export default function Main({ generate }: Props): JSX.Element {
   const router = useRouter();
   const citiation = useCitiation();
   // TODO: implement global estate of an citiation
@@ -108,7 +112,7 @@ export default function Main(): JSX.Element {
             </Select>
             <Input
               className={cn(
-                "w-full max-w-[400px]",
+                "w-full max-w-[398px]",
                 error && "border-red-600 text-red-600"
               )}
               placeholder="https://es.wikipedia.org/wiki/Dante_Alighieri"
@@ -119,7 +123,7 @@ export default function Main(): JSX.Element {
               onClick={() => handleClick()}
               id="citegenerated"
             >
-              Get cite
+              {generate}
             </Button>
           </div>
           {isloading ? <>Loading...</> : ""}

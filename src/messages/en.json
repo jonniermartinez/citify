@@ -3,28 +3,19 @@
         "twitter": "Twitter (X)"
     },
     "Home": {
-        "Header": {
-            "title": "Free APA Citation Generator"
-        },
-        "section1": {
-            "title":"Citiation Examples"
-        },
-        "section2": {
-            "title":"APA Citiation Anathomic"
-        }
+        "title": "Free APA Citation Generator",
+        "button-call-to-action": "Generate"
     },
-    "components": {
-        "citeGenerator": {
-            "label": "Cite a webpage",
-            "button": "Generate APA reference"
-        },
-        "cite-result": {
-            "toltip":  "Recently cited",
-            "test-ulr": "Test url",
-            "retrieved": "Retrieved",
-            "cite-from": "from",
-            "copy-clipboard": "Copy to clipboard"
-        }
+    "citeGenerator": {
+        "label": "Cite a webpage",
+        "button": "Generate APA reference"
+    },
+    "cite-result": {
+        "toltip": "Recently cited",
+        "test-ulr": "Test url",
+        "retrieved": "Retrieved",
+        "cite-from": "from",
+        "copy-clipboard": "Copy to clipboard"
     },
     "alerts": {
         "cite_toast_title": "Excellent",
@@ -33,6 +24,10 @@
         "cite_fech_error_description": "Please verify the URL"
     },
     "citiation": {
-        "retrieved-from": "Retrieved from"
+        "recently-cited": "Recently cited"
+    },
+    "result": {
+        "title": "Your citation has been generated correctly.",
+        "subtitile": "Anatomy of the format"
     }
 }

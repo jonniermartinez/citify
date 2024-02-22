@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Toaster, toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 interface Props {
   cite: string;
@@ -9,6 +10,7 @@ interface Props {
 
 // TODO: Solo recibira la en texto plano la armaré en la funciones correspondientes
 export default function CitaResult({ cite }: Props) {
+  const t = useTranslations();
   const cita = cite;
 
   return (

@@ -3,9 +3,10 @@ import { Toaster } from "@/components/ui/toaster";
 import cursor from "@/assets/cursos.svg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
-  // const t = useTranslations("Index");
+  const t = useTranslations("Home");
 
   const classes = {
     container: cn("max-w-2xl text-center mx-auto"),
@@ -23,13 +24,13 @@ export default function Home() {
   return (
     <>
       <h1 data-testid="hero-text" className={classes.title}>
-        Free APA Citation Generator
+        {t("title")}
       </h1>
       <section className={classes.container}>
         <div className={classes.imageCursor}>
           <Image src={cursor} alt={"sdsadas"}></Image>
         </div>
-        <Main></Main>
+        <Main generate={t("button-call-to-action")}></Main>
       </section>
 
       {/* 
