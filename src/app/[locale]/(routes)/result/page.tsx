@@ -4,11 +4,11 @@ import useCitiation from "@/hooks/citiation-state";
 
 function Result() {
   const t = useTranslations("result");
-  const citiation = useCitiation();
+  // const citiation = useCitiation();
 
-  if (!citiation.url) {
-    return <>404</>;
-  }
+  // if (!citiation.url) {
+  //   return <>404</>;
+  // }
 
   return (
     <>
