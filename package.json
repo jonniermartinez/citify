@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gcp-build": "node node_modules/puppeteer/install.js"
   },
   "dependencies": {
     "@extractus/article-extractor": "^8.0.3",
@@ -25,7 +26,8 @@
     "next": "latest",
     "next-intl": "^3.5.3",
     "prisma": "^5.9.1",
-    "puppeteer": "^21.3.6",
+    "puppeteer-core": "^21.9.0",
+    "@sparticuz/chromium-min": "121.0.0",
     "react": "latest",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest",
