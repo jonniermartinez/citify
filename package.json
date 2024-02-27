@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gcp-build": "node node_modules/puppeteer/install.js"
   },
   "dependencies": {
     "@extractus/article-extractor": "^8.0.3",
