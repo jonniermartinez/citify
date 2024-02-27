@@ -9,7 +9,7 @@ function Result() {
   const citiation = useCitiation();
 
   if (!citiation.url) {
-    router.push(`/en`);
+    return <>404</>;
   }
 
   return (
