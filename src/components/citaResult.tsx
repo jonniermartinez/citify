@@ -2,21 +2,17 @@ import React from "react";
 import { Button } from "./ui/button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Toaster, toast } from "sonner";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 interface Props {
   cite: string;
 }
-
-// TODO: Solo recibira la en texto plano la armaré en la funciones correspondientes
 export default function CitaResult({ cite }: Props) {
-  const t = useTranslations();
   const cita = cite;
 
   return (
     <>
       <Toaster position="top-center" richColors />
-
       <div className=" w-72 md:w-full flex justify-center">
         <div className="absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary">
           Recently cited

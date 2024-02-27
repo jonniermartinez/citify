@@ -68,8 +68,6 @@ export default function Main({ generate }: Props): JSX.Element {
       url: result.url,
       citiation_result: result.citiation_result,
       textual_citiation_result: result.textual_citiation_result,
-      citiation_examples: result.citiation_examples,
-      textual_citiation_examples: result.textual_citiation_examples,
       textual_anatomic: result.textual_anatomic,
       anatomic: result.anatomic,
     });
@@ -112,7 +110,7 @@ export default function Main({ generate }: Props): JSX.Element {
             </Select>
             <Input
               className={cn(
-                "w-full max-w-[398px]",
+                "w-full max-w-[395px]",
                 error && "border-red-600 text-red-600"
               )}
               placeholder="https://es.wikipedia.org/wiki/Dante_Alighieri"

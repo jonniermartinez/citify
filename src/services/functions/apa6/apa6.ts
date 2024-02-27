@@ -15,24 +15,9 @@ export async function Apa6daEdicion(
   const info =
     lang === "es"
       ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi deserunt quo et error"
-      : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi deserunt quo et error";
-
-  // esta parte todavia no lo haré
-  const citiation_examples_en = [""];
-  const citiation_examples_es = [""];
-
-  const textual_citiation_examples_en = [""];
-  const textual_citiation_examples_es = [""];
-  /* *************** */
+      : "These examples illustrate the structure of an APA citation in both the long and short formats of version 6.";
 
   const retrieved = lang === "es" ? "Recuperado de" : "Retrieved from";
-
-  const citiation_examples =
-    lang === "es" ? citiation_examples_es : citiation_examples_en;
-  const textual_citiation_examples =
-    lang === "es"
-      ? textual_citiation_examples_es
-      : textual_citiation_examples_en;
 
   try {
     const result = await fetch(`${mainDomain}/api/getInfo?url=${url}`);
@@ -62,9 +47,7 @@ export async function Apa6daEdicion(
         url,
         textual_citiation_result,
         citiation_result,
-        citiation_examples,
         textual_anatomic,
-        textual_citiation_examples,
         anatomic,
       };
     } else {
@@ -78,8 +61,6 @@ export async function Apa6daEdicion(
       url,
       textual_citiation_result: "Error generating citation",
       citiation_result: "Error generating citation",
-      citiation_examples: [],
-      textual_citiation_examples: [],
       textual_anatomic,
       anatomic,
     };

@@ -1,5 +1,4 @@
 import Main from "@/app/[locale]/components/main";
-import { Toaster } from "@/components/ui/toaster";
 import cursor from "@/assets/cursos.svg";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -32,11 +31,6 @@ export default function Home() {
         </div>
         <Main generate={t("button-call-to-action")}></Main>
       </section>
-
-      {/* 
-      // TODO: verify the toaster ¿what are it doing?
-       */}
-      <Toaster></Toaster>
     </>
   );
 }

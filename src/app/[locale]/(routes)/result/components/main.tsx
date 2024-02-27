@@ -26,9 +26,11 @@ function MainResult({ tittle, subtitle }: MainResultProps) {
       </section>
 
       <section className="mb-14">
-        <h4 className="scroll-m-20 pb-5 text-3xl font-semibold ">{subtitle}</h4>
+        <h4 className="scroll-m-20 pb-5 text-3xl font-semibold ">
+          {subtitle}.
+        </h4>
         <p className="pb-5">{citiation.info}</p>
-        <div className="flex flex-wrap justify-between gap-5 items-center content-center">
+        <div className="flex flex-wrap justify-between gap-8 items-center content-center mt-14">
           <Image
             className=" w-full h-56 bg-slate-700"
             src={citiation.anatomic}
