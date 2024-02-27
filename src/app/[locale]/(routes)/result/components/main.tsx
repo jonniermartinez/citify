@@ -1,9 +1,9 @@
 "use client";
 
-import useCitiation from "@/hooks/citiation-state";
 import CitaResult from "@/components/citaResult";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import useCitiation from "@/hooks/citiation-state";
+// import { useRouter } from "next/navigation";
 
 interface MainResultProps {
   tittle: string;
@@ -12,11 +12,11 @@ interface MainResultProps {
 
 function MainResult({ tittle, subtitle }: MainResultProps) {
   const citiation = useCitiation();
-  const router = useRouter();
+  // const router = useRouter();
 
-  if (!citiation.url) {
-    router.push(`/`);
-  }
+  // if (!citiation.url) {
+  //   router.push(`/`);
+  // }
 
   return (
     <div className=" text-center mx-2">
