@@ -22,7 +22,6 @@ const useCitiation = create<CartStore>((set, get) => ({
       url: data.url,
       textual_citiation_result: data.textual_citiation_result,
       citiation_result: data.citiation_result,
-      citiation_examples: data.citiation_examples,
       textual_anatomic: data.textual_anatomic,
       anatomic: data.anatomic,
     });
