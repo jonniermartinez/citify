@@ -37,6 +37,7 @@ export async function GET(request: Request) {
         - apple pocast  
         - spotify postcast
     */
+
     let publishedDate;
     if (article?.published) {
       publishedDate = new Date(article.published).toLocaleDateString("en-US");

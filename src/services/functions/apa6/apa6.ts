@@ -2,19 +2,23 @@ import { Citiatoin, ApaCitation } from "@/lib/types";
 
 const mainDomain = process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000";
 
-import anatomicImage from "./assets/AnatomiaAPA6 (english).svg";
-import anatomicTextualImage from "./assets/Anatomia APA 6 textual (english).svg";
+import anatomicImageEN from "./assets/AnatomiaAPA6 (english).svg";
+import anatomicTextualImageEN from "./assets/Anatomia APA 6 textual (english).svg";
+
+import anatomicImageES from "./assets/1 (esp).svg";
+import anatomicTextualImageES from "./assets/2 (esp).svg";
 
 export async function Apa6daEdicion(
   url: string,
   lang: string
 ): Promise<Citiatoin> {
   const apaStyle = lang === "es" ? "APA 6 edeción" : "APA 6th edition";
-  const anatomic = lang === "es" ? "" : anatomicImage;
-  const textual_anatomic = lang === "es" ? "" : anatomicTextualImage;
+  const anatomic = lang === "es" ? anatomicImageES : anatomicImageEN;
+  const textual_anatomic =
+    lang === "es" ? anatomicTextualImageES : anatomicTextualImageEN;
   const info =
     lang === "es"
-      ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi deserunt quo et error"
+      ? "Estos ejemplos ilustran la estructura de una cita APA tanto en formato largo como corto de la versión 6."
       : "These examples illustrate the structure of an APA citation in both the long and short formats of version 6.";
 
   const retrieved = lang === "es" ? "Recuperado de" : "Retrieved from";

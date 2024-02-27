@@ -13,7 +13,7 @@ export default function CitaResult({ cite }: Props) {
   return (
     <>
       <Toaster position="top-center" richColors />
-      <div className=" w-72 md:w-full flex justify-center">
+      <div className=" mx-auto w-72 md:w-full flex justify-center">
         <div className="absolute mx-auto -translate-y-2/4 rounded-xl bg-navy-blue-12 px-2	py-1 text-xs font-semibold text-white bg-primary">
           Recently cited
         </div>
