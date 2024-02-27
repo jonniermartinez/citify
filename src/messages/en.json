@@ -1,19 +1,33 @@
 {
-    "nav": {
+    "navigation": {
         "twitter": "Twitter (X)"
     },
-    "Index": {
+    "Home": {
         "title": "Free APA Citation Generator",
-        "cite_label": "Cite a webpage",
-        "cite_botton": "Generate APA reference",
-        "cite_toltip": "Recently cited",
-        "cite_test_ulr": "Test url",
-        "cite_retrieved": "Retrieved",
-        "cite_from": "from",
-        "cite_copy_clipboard": "Copy to clipboard",
+        "button-call-to-action": "Generate"
+    },
+    "citeGenerator": {
+        "label": "Cite a webpage",
+        "button": "Generate APA reference"
+    },
+    "cite-result": {
+        "toltip": "Recently cited",
+        "test-ulr": "Test url",
+        "retrieved": "Retrieved",
+        "cite-from": "from",
+        "copy-clipboard": "Copy to clipboard"
+    },
+    "alerts": {
         "cite_toast_title": "Excellent",
         "cite_toast_description": "Copied to the clipboard successfully 🚀",
         "cite_fech_error_title": "URL Error",
         "cite_fech_error_description": "Please verify the URL"
+    },
+    "citiation": {
+        "recently-cited": "Recently cited"
+    },
+    "result": {
+        "title": "Your citation has been generated correctly.",
+        "subtitile": "Anatomy of the format"
     }
 }
