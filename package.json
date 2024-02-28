@@ -36,6 +36,7 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/jsdom": "^21.1.6",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-copy-to-clipboard": "^5.0.5",
