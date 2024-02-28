@@ -26,8 +26,7 @@
     "next": "latest",
     "next-intl": "^3.5.3",
     "prisma": "^5.9.1",
-    "puppeteer-core": "^21.9.0",
-    "@sparticuz/chromium-min": "121.0.0",
+    "puppeteer": "^21.3.6",
     "react": "latest",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest",
@@ -37,6 +36,7 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/jsdom": "^21.1.6",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-copy-to-clipboard": "^5.0.5",

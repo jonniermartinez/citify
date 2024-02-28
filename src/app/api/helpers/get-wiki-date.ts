@@ -1,29 +1,23 @@
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium-min";
+import { JSDOM } from "jsdom";
 
 export async function obtenerFechaEdicion(url: string) {
-  // Or use
-  const chromiumPack =
-    "https://github.com/Sparticuz/chromium/releases/download/v121.0.0/chromium-v121.0.0-pack.tar";
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    // See https://www.npmjs.com/package/@sparticuz/chromium#running-locally--headlessheadful-mode for local executable path
-    executablePath: await chromium.executablePath(chromiumPack),
-    headless: true,
-  });
-  const page = await browser.newPage();
-  await page.goto(url, {
-    waitUntil: "domcontentloaded",
-  });
+  try {
+    const res = await fetch(url);
+    const html = await res.text();
 
-  await page.waitForSelector("#footer-info-lastmod");
-  const info = await page.evaluate(() => {
-    const data = document.getElementById("footer-info-lastmod");
-    return data?.innerHTML;
-  });
-  console.log(info);
+    const dom = new JSDOM(html);
 
-  // Cerrar el navegador
-  await browser.close();
-  return info;
+    // Assuming there's only one element with the class "footer-info-lastmod"
+    const lastModifiedDateElement = dom.window.document.querySelector(
+      ".mw-footer-container"
+    );
+
+    if (lastModifiedDateElement) {
+      const lastEdit = lastModifiedDateElement.textContent;
+      console.log(lastEdit);
+      return lastEdit;
+    }
+  } catch (error) {
+    return "Error fetching or parsing the HTML:";
+  }
 }
