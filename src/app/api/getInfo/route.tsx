@@ -1,6 +1,11 @@
 import { extract } from "@extractus/article-extractor";
 import { obtenerFechaEdicion } from "../helpers/get-wiki-date";
-import { dateregex, wikipediaUrlPattern } from "../helpers/regexs";
+import {
+  dateregex,
+  wikipediaUrlPattern,
+  youtubeUrlPattern,
+} from "../helpers/regexs";
+import { getYotubeData } from "../helpers/get-youtube-data";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -31,6 +36,18 @@ export async function GET(request: Request) {
     }
 
     // TODO: youtube video.
+    if (youtubeUrlPattern.test(url)) {
+      const data = await getYotubeData(url);
+
+      return Response.json({
+        title: data.title,
+        url: url,
+        author: data.author,
+        source: article?.source,
+        publishedDate: data.publishedDate,
+      });
+    }
+
     // TODO: twiet case
     /* 
     TODO: spotify pocast  ---   https://www.enago.com/es/academy/citing-a-podcast/ 
