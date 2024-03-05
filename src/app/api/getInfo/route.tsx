@@ -19,7 +19,6 @@ export async function GET(request: Request) {
       const getDate = await obtenerFechaEdicion(url);
       const match = getDate?.match(dateregex);
       let lastmodifiedDate;
-
       if (match) {
         const fechaCompleta = match[2];
         lastmodifiedDate = fechaCompleta;
@@ -35,10 +34,9 @@ export async function GET(request: Request) {
       });
     }
 
-    // TODO: youtube video.
+    // youtube video case.
     if (youtubeUrlPattern.test(url)) {
       const data = await getYotubeData(url);
-
       return Response.json({
         title: data.title,
         url: url,
