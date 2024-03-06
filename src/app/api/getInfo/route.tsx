@@ -46,7 +46,6 @@ export async function GET(request: Request) {
       });
     }
 
-    // TODO: twiet case
     /* 
     TODO: spotify pocast  ---   https://www.enago.com/es/academy/citing-a-podcast/ 
         - apple pocast  
@@ -57,6 +56,7 @@ export async function GET(request: Request) {
     if (article?.published) {
       publishedDate = new Date(article.published).toLocaleDateString("en-US");
     }
+
     return Response.json({
       title: article?.title,
       url: article?.url,

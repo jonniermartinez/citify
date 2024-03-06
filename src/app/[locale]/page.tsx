@@ -31,6 +31,19 @@ export default function Home() {
         </div>
         <Main generate={t("button-call-to-action")}></Main>
       </section>
+      <section className="mt-20">
+        <h3 className="scroll-m-20 text-center text-3xl font-semibold tracking-tight">
+          Typical sources
+        </h3>
+        <div className="flex flex-wrap gap-5 items-center justify-center mt-10">
+          <Image
+            width={150}
+            height={150}
+            alt="wikipedia logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wikipedia-logo-v2-en.svg"
+          ></Image>
+        </div>
+      </section>
     </>
   );
 }
