@@ -32,9 +32,9 @@ export default function Home() {
         </div>
         <Main generate={t("button-call-to-action")}></Main>
       </section>
-      <section>
+      {/* <section>
         <Image width={200} height={200} src={apaImage} alt="" />
-      </section>
+      </section> */}
     </>
   );
 }
