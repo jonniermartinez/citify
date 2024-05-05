@@ -1,5 +1,6 @@
 import Main from "@/app/[locale]/components/main";
 import cursor from "@/assets/cursos.svg";
+import apaImage from "@/assets/apa.png"
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -30,6 +31,9 @@ export default function Home() {
           <Image src={cursor} alt={"sdsadas"}></Image>
         </div>
         <Main generate={t("button-call-to-action")}></Main>
+      </section>
+      <section>
+        <Image width={200} height={200} src={apaImage} alt="" />
       </section>
     </>
   );

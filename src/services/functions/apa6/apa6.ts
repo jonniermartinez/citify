@@ -70,6 +70,3 @@ export async function Apa6daEdicion(
     };
   }
 }
-export function Apa7maEdicion(input: string): string {
-  return input;
-}
